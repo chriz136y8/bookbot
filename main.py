@@ -1,3 +1,4 @@
+#Compile report
 def report(num,dictionary,filename):
     report = f"--- Begin report of {filename} ---\n"
     sorted_d = dict(sorted(dictionary.items(), key=lambda x: x[1], reverse=True))
@@ -11,7 +12,7 @@ def report(num,dictionary,filename):
     report += "--- End report ---"
     return report
 
-
+#Count character frequency in text
 def char_frequency(text):
     lowered_string = text.lower()
     frequency = {}
@@ -23,6 +24,7 @@ def char_frequency(text):
             frequency[i] = 1
     return frequency
 
+#Count number of words in text
 def count_words(text) :
     words = text.split()
     count = len(words)
@@ -31,7 +33,7 @@ def count_words(text) :
 
 def main():
     filename = "books/frankenstein.txt"
-    with open("books/frankenstein.txt") as f:
+    with open(filename) as f:
         file_contents = f.read()
 
     num_words =count_words(file_contents)
